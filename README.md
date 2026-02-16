@@ -8,19 +8,21 @@ Create a Java program with a parent class `Employee` and child classes `FullTime
 and using parent references to manage all employee instances.
 
 ### Implementation
-  - **Create a parent class `Employee`**:
+  - **Implement the parent class `Employee`**:
     - Add a `String name` property.
     - Add a constructor that initializes `name`.
     - Implement a `double calculateSalary()` method that returns 0.
     - Implement an **overloaded** method `double calculateSalary(double bonus)` that by default returns `calculateSalary()`
 
-- **Create a `FullTimeEmployee`** that inherits from `Employee`:
+- **Implement the `FullTimeEmployee`**:
+  - **Inherits** from `Employee`.
   - Add a `double monthlySalary` property.
   - Add a constructor to initialize the `name` and `monthlySalary`.
   - **Override** the `calculateSalary()` method to return the monthly salary.
   - **Override** the overloaded `calculateSalary(double bonus)` method to return `monthlySalary + bonus`.
 
-- **Create a `PartTimeEmployee`** that inherits from `Employee`:
+- **Implement a `PartTimeEmployee`**:
+  - **Inherits** from `Employee`.
   - Add properties `double hourlyRate` and `int hoursWorked`.
   - Add a constructor to initialize `name`, `hourlyRate`, and `hoursWorked`.
   - **Override** the `calculateSalary()` method to return `hourlyRate * hoursWorked`.
