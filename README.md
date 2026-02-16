@@ -2,30 +2,30 @@
 
 ### Objective
 
-The project’s main goal is to understand how polymorphism works in Java via **method overriding**, **method overloading**, and using **parent references**. 
-
+The project’s main goal is to understand polymorphism in Java through method overriding, method overloading, and the use of parent references. 
 ### Problem
-
-Create a Java program with a parent class `Employee` and child classes `FullTimeEmployee` and `PartTimeEmployee` to demonstrate method overriding and overloading. Use a parent reference to manage all employee instances in the main method.
+Create a Java program with a parent class `Employee` and child classes `FullTimeEmployee` and `PartTimeEmployee` to demonstrate Method overriding, Method overloading
+and using parent references to manage all employee instances.
 
 ### Implementation
+  - **Create a parent class `Employee`**:
+    - Add a `String name` property.
+    - Add a constructor that initializes `name`.
+    - Implement a `double calculateSalary()` method that returns 0.
+    - Implement an **overloaded** method `double calculateSalary(double bonus)` that by default returns `calculateSalary()`
 
-- Create a parent class `Employee` with:
-  - A `String name`.
-  - A constructor for the name.
-  - A `double calculateSalary()` method that returns 0.
+- **Create a `FullTimeEmployee`** that inherits from `Employee`:
+  - Add a `double monthlySalary` property.
+  - Add a constructor to initialize the `name` and `monthlySalary`.
+  - **Override** the `calculateSalary()` method to return the monthly salary.
+  - **Override** the overloaded `calculateSalary(double bonus)` method to return `monthlySalary + bonus`.
 
-- Create a **`FullTimeEmployee`** subclass:
-    - Add a `double monthlySalary`.
-    - Override `calculateSalary()` to return the monthly salary.
-    - An **overloaded** `calculateSalary(double bonus)` method that returns the bonus + monthly salary.
+- **Create a `PartTimeEmployee`** that inherits from `Employee`:
+  - Add properties `double hourlyRate` and `int hoursWorked`.
+  - Add a constructor to initialize `name`, `hourlyRate`, and `hoursWorked`.
+  - **Override** the `calculateSalary()` method to return `hourlyRate * hoursWorked`.
+  - **Override** the overloaded `calculateSalary(double bonus)` method to return `(hourlyRate * hoursWorked) + bonus`.
 
-- Create a **`PartTimeEmployee`** subclass:
-    - Add properties `double hourlyRate` and `int hoursWorked`,
-    - Override `calculateSalary()` to return `hourlyRate * hoursWorked`.
-
-- In the `main` method:
-  - Create objects from the `FullTimeEmployee` and `PartTimeEmployee`, both using the parent.
-  - Use the parent reference to print each employee’s name and calculated salary by calling their methods.
-  - Call the overloaded method with a bonus.
-
+- **In the `main` method**:
+  - Create `FullTimeEmployee` and `PartTimeEmployee` objects, both using the parent references.
+  - For each object, print their name and salary using the `calculateSalary()` and `calculateSalary(double bonus)` methods.
