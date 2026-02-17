@@ -19,14 +19,14 @@ and using parent references to manage all employee instances.
   - Add a `double monthlySalary` property.
   - Add a constructor to initialize the `name` and `monthlySalary`.
   - **Override** the `calculateSalary()` method to return the monthly salary.
-  - **Override** the overloaded `calculateSalary(double bonus)` method to return `monthlySalary + bonus`.
+  - **Override** the overloaded `calculateSalary(double bonus)` method to return `calculateSalary() + bonus`.
 
 - **Implement a `PartTimeEmployee`**:
   - **Inherits** from `Employee`.
   - Add properties `double hourlyRate` and `int hoursWorked`.
   - Add a constructor to initialize `name`, `hourlyRate`, and `hoursWorked`.
   - **Override** the `calculateSalary()` method to return `hourlyRate * hoursWorked`.
-  - **Override** the overloaded `calculateSalary(double bonus)` method to return `(hourlyRate * hoursWorked) + bonus`.
+  - **Override** the overloaded `calculateSalary(double bonus)` method to return `calculateSalary() + bonus`.
 
 - **In the `main` method**:
   - Create `FullTimeEmployee` and `PartTimeEmployee` objects, both using the parent references.
